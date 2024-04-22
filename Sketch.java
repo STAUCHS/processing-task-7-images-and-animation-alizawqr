@@ -4,6 +4,7 @@ import processing.core.PImage;
 public class Sketch extends PApplet {
 
   PImage imgPenguin;
+  PImage imgSnow;
 
   // x and y coordinates for penguin
   float fltPenguinX = 1;
@@ -29,17 +30,23 @@ public class Sketch extends PApplet {
   }
 
   public void setup() {
-    background(255, 255, 255);
 
     // load penguin picture
     imgPenguin = loadImage("penguin.png");
 
     // resize penguin
     imgPenguin.resize(imgPenguin.width / 15, imgPenguin.height / 15);
+
+    // load background image
+    imgSnow = loadImage("images.png");
+
+    // resize image
+    imgSnow.resize(imgSnow.width * 2, imgSnow.height * 3);
+
   }
 
   public void draw() {
-    background(255, 255, 255);
+    image(imgSnow, 0, 0);
     
     // draw circle and animate
     ellipse(fltCircleX, fltCircleY, 50, 50);
